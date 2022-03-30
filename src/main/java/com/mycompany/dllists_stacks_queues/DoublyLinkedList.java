@@ -94,4 +94,47 @@ public class DoublyLinkedList {
       if (currentNode == tail)
          tail = predecessor;
    }
-}
+    public int extractFirst() throws Exception{
+       if(head == null){
+           throw new Exception("No data found");
+       }
+       else{
+           return head.data;
+       }
+       
+   }
+    public int extractLast() throws Exception{
+     if(tail == null){
+         throw new Exception("No data found");
+     }
+     else{
+         return tail.data;
+     }
+
+   }
+    //complete returning the last 3 elements 
+   public int find(int obj){
+       int index=0;
+       Node node = head;
+       while(node != null){
+           if(node.data == obj){
+           } else {
+               return index;
+           }
+           node= node.next;
+           index++;
+       }
+       return -1;
+   }
+        @Override
+        public String toString(){
+            String tmp ="The content of the list are: ";
+            Node node = head;
+          while (node != null) {
+             tmp+=node.data + " ";
+             node = node.next;
+            }
+          return tmp;            
+        }
+        
+     }
